@@ -4,15 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PixelsLab | مُزيل خلفية الصور الذكي</title>
+    <title>PixelsLab | مُزيل خلفية الصور وعلاج جودة الصور</title>
     <meta name="description"
-        content="PixelsLab أداة عربية مجانية لإزالة خلفية الصور باستخدام الذكاء الاصطناعي. مثالية للمصممين وصناع المحتوى في مصر والعالم العربي بجودة عالية وسرعة فائقة.">
+        content="PixelsLab أداة عربية مجانية لإزالة خلفية الصور وتحسين جودتها وتلوين الصور القديمة باستخدام الذكاء الاصطناعي.">
     <meta name="keywords"
-        content="إزالة خلفية الصور, حذف خلفية الصور, remove background ai, background remover arabic, أداة تصميم مجانية, صور بدون خلفية, ai image tool">
+        content="إزالة خلفية الصور, تحسين جودة الصور, تلوين صور قديمة, remove background ai, image enhancer, colorize old photos">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
+    <link
+        href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Outfit:wght@400;600;800&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -27,98 +29,203 @@
             <img src="logo.png" alt="PixelsLab Logo" class="custom-logo">
             <span class="brand-name">PixelsLab</span>
         </div>
-        <div class="nav-links">
-            <a href="#" class="active">الرئيسية</a>
-            <a href="#about">من نحن</a>
-            <a href="#">اتصل بنا</a>
+        <div class="menu-toggle" id="menu-toggle">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
         </div>
     </nav>
 
-    <main>
+    <div class="side-menu" id="side-menu">
+        <div class="side-menu-content">
+            <a href="javascript:void(0)" class="menu-link" onclick="toggleMenu(); scrollToSection('home')">الرئيسية</a>
+            <a href="javascript:void(0)" class="menu-link" onclick="toggleMenu(); scrollToSection('bg-tool')">إزالة
+                الخلفية</a>
+            <a href="javascript:void(0)" class="menu-link" onclick="toggleMenu(); scrollToSection('quality-tool')">زيادة
+                الجودة</a>
+            <a href="javascript:void(0)" class="menu-link"
+                onclick="toggleMenu(); scrollToSection('colorize-tool')">تلوين الصور</a>
+            <a href="javascript:void(0)" class="menu-link" onclick="toggleMenu(); scrollToSection('about')">من نحن</a>
+        </div>
+    </div>
+
+    <section class="home-hero" id="home">
         <header>
-            <h1>امسح الخلفية بضغطة واحدة</h1>
-            <p>أداة ذكية واحترافية مدعومة بالذكاء الاصطناعي لإزالة خلفية الصور بجودة عالية مجاناً.</p>
+            <h1>الذكاء الاصطناعي في خدمة إبداعك</h1>
+            <p>أدوات ذكية واحترافية لمعالجة صورك في ثوانٍ</p>
         </header>
 
-        <section class="comparison-section">
-            <div class="comparison-container">
-                <div class="comparison-slider">
-                    <div class="image-before">
-                        <img src="before.webp" alt="Before">
-                        <div class="label-badge label-before">قبل</div>
-                    </div>
-                    <div class="image-after">
-                        <img src="after.webp" alt="After">
-                        <div class="label-badge label-after">بعد</div>
-                    </div>
-                    <div class="slider-handle">
-                        <div class="handle-line"></div>
-                        <div class="handle-circle">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="15 18 9 12 15 6" />
-                            </svg>
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="9 18 15 12 9 6" />
-                            </svg>
-                        </div>
-                        <div class="handle-line"></div>
-                    </div>
-                    <input type="range" min="0" max="100" value="50" class="slider-input" id="before-after-slider">
-                </div>
-                <div class="comparison-info">
-                    <h3>معاينة لمدى دقة الأداة</h3>
-                    <p>الذكاء الاصطناعي بيتعرف على الحواف بدقة متناهية حتى في أصعب الصور.</p>
-                </div>
+        <div class="choice-grid">
+            <div class="choice-card" onclick="scrollToSection('bg-tool')">
+                <div class="choice-icon">✂️</div>
+                <h3>إزالة الخلفية</h3>
+                <p>قص الصور بدقة احترافية</p>
             </div>
-        </section>
+            <div class="choice-card" onclick="scrollToSection('quality-tool')">
+                <div class="choice-icon">💎</div>
+                <h3>زيادة الجودة</h3>
+                <p>توضيح الصور المشوشة</p>
+            </div>
+            <div class="choice-card" onclick="scrollToSection('colorize-tool')">
+                <div class="choice-icon">🎨</div>
+                <h3>تلوين الصور</h3>
+                <p>إعادة الحياة للصور القديمة</p>
+            </div>
+        </div>
+    </section>
 
-        <section class="tool-container">
-            <div class="glass-card" id="drop-zone">
-                <div class="upload-content" id="upload-content">
-                    <div class="icon-box">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                            <polyline points="17 8 12 3 7 8" />
-                            <line x1="12" y1="3" x2="12" y2="15" />
+    <section class="comparison-section">
+        <div class="comparison-container">
+            <div class="comparison-slider">
+                <div class="image-before">
+                    <img src="before.webp" alt="Before">
+                    <div class="label-badge label-before">قبل</div>
+                </div>
+                <div class="image-after">
+                    <img src="after.webp" alt="After">
+                    <div class="label-badge label-after">بعد</div>
+                </div>
+                <div class="slider-handle">
+                    <div class="handle-line"></div>
+                    <div class="handle-circle">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="15 18 9 12 15 6" />
+                        </svg>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 18 15 12 9 6" />
                         </svg>
                     </div>
-                    <h2>اسحب الصورة هنا أو اختر ملف</h2>
-                    <p>يدعم تنسيقات JPG, PNG, WEBP (حتى 10 ميجا)</p>
-                    <button class="btn-primary" onclick="document.getElementById('file-input').click()">اختيار
-                        صورة</button>
-                    <input type="file" id="file-input" hidden accept="image/*">
+                    <div class="handle-line"></div>
+                </div>
+                <input type="range" min="0" max="100" value="50" class="slider-input" id="before-after-slider">
+            </div>
+            <div class="comparison-info">
+                <h3>دقة في حذف الخلفية</h3>
+                <p>الذكاء الاصطناعي بيتعرف على الحواف بدقة متناهية حتى في أصعب الصور.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="comparison-section">
+        <div class="comparison-container">
+            <div class="comparison-slider">
+                <div class="image-before">
+                    <img src="assets/images/Before Colorise.webp" alt="Before Colorize">
+                    <div class="label-badge label-before">قبل</div>
+                </div>
+                <div class="image-after">
+                    <img src="assets/images/After colorise.webp" alt="After Colorize">
+                    <div class="label-badge label-after">بعد</div>
+                </div>
+                <div class="slider-handle">
+                    <div class="handle-line"></div>
+                    <div class="handle-circle">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="15 18 9 12 15 6" />
+                        </svg>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 18 15 12 9 6" />
+                        </svg>
+                    </div>
+                    <div class="handle-line"></div>
+                </div>
+                <input type="range" min="0" max="100" value="50" class="slider-input" id="colorize-slider">
+            </div>
+            <div class="comparison-info">
+                <h3>تلوين الصور القديمة</h3>
+                <p>أعد الحياة لذكرياتك القديمة من خلال تلوين الصور الأبيض والأسود بضغطة زر.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="comparison-section">
+        <div class="comparison-container">
+            <div class="comparison-slider">
+                <div class="image-before">
+                    <img src="assets/images/Before Upscale.webp" alt="Before Quality">
+                    <div class="label-badge label-before">قبل</div>
+                </div>
+                <div class="image-after">
+                    <img src="assets/images/After Upscale.webp" alt="After Quality">
+                    <div class="label-badge label-after">بعد</div>
+                </div>
+                <div class="slider-handle">
+                    <div class="handle-line"></div>
+                    <div class="handle-circle">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="15 18 9 12 15 6" />
+                        </svg>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 18 15 12 9 6" />
+                        </svg>
+                    </div>
+                    <div class="handle-line"></div>
+                </div>
+                <input type="range" min="0" max="100" value="50" class="slider-input" id="upscale-slider">
+            </div>
+            <div class="comparison-info">
+                <h3>زيادة جودة الصور</h3>
+                <p>حول صورك المشوشة أو ضعيفة الجودة إلى صور واضحة ونابضة بالتفاصيل.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tool 1: Background Removal -->
+    <section class="tool-container" id="bg-tool">
+        <div class="tool-header">
+            <h2>مُزيل الخلفية الذكي</h2>
+            <p>امسح أي خلفية بضغطة واحدة مع الحفاظ على أدق التفاصيل</p>
+        </div>
+        <div class="glass-card" id="drop-zone">
+            <div class="upload-content" id="upload-content">
+                <div class="icon-box">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                        <polyline points="17 8 12 3 7 8" />
+                        <line x1="12" y1="3" x2="12" y2="15" />
+                    </svg>
+                </div>
+                <h2>اسحب الصورة هنا أو اختر ملف</h2>
+                <p>يدعم تنسيقات JPG, PNG, WEBP (حتى 10 ميجا)</p>
+                <button class="btn-primary" onclick="document.getElementById('file-input').click()">اختيار
+                    صورة</button>
+                <input type="file" id="file-input" hidden accept="image/*">
+            </div>
+
+            <div class="processing-content hidden" id="processing-content">
+                <div class="loader"></div>
+                <div class="progress-container">
+                    <div class="progress-bar" id="progress-bar"></div>
+                </div>
+                <span class="progress-percentage" id="progress-percentage">0%</span>
+                <h2>جاري معالجة الصورة...</h2>
+                <p>جاري إرسال الصورة للمعالجة...</p>
+            </div>
+
+            <div class="result-content hidden" id="result-content">
+                <div class="previews">
+                    <div class="preview-box">
+                        <span>الأصلية</span>
+                        <img id="original-preview" src="" alt="Original">
+                    </div>
+                    <div class="preview-box">
+                        <span>النتيجة</span>
+                        <div class="result-image-container" id="result-container">
+                            <img id="result-image" src="" alt="Result">
+                        </div>
+                    </div>
                 </div>
 
-                <div class="processing-content hidden" id="processing-content">
-                    <div class="loader"></div>
-                    <div class="progress-container">
-                        <div class="progress-bar" id="progress-bar"></div>
-                    </div>
-                    <span class="progress-percentage" id="progress-percentage">0%</span>
-                    <h2>جاري معالجة الصورة...</h2>
-                    <p>جاري إرسال الصورة للمعالجة...</p>
-                </div>
-
-                <div class="result-content hidden" id="result-content">
-                    <div class="previews">
-                        <div class="preview-box">
-                            <span>الأصلية</span>
-                            <img id="original-preview" src="" alt="Original">
-                        </div>
-                        <div class="preview-box">
-                            <span>النتيجة</span>
-                            <div class="result-image-container" id="result-container">
-                                <img id="result-image" src="" alt="Result">
-                            </div>
-                        </div>
-                    </div>
-
+                <div class="result-actions-wrapper">
                     <div class="bg-selection-area">
                         <h3>تغيير الخلفية</h3>
-
                         <div class="bg-tabs">
                             <button class="tab-btn active" data-tab="solids">ألوان</button>
                             <button class="tab-btn" data-tab="gradients">تدرجات</button>
@@ -188,22 +295,18 @@
                                     <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=100&q=60"
                                         alt="Lake">
                                 </button>
-                                <button class="img-btn" data-type="image"
-                                    data-value="https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?auto=format&fit=crop&w=1920&q=90">
-                                    <img src="https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?auto=format&fit=crop&w=100&q=60"
-                                        alt="AI Abstract">
-                                </button>
-                                <button class="img-btn" data-type="image"
-                                    data-value="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1920&q=90">
-                                    <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=100&q=60"
-                                        alt="AI 3D">
-                                </button>
-                                <button class="img-btn" data-type="image"
-                                    data-value="https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&w=1920&q=90">
-                                    <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&w=100&q=60"
-                                        alt="Cyber">
-                                </button>
                             </div>
+                        </div>
+                    </div>
+
+                    <div class="suggestion-card-wrapper" id="suggestion-card">
+                        <div class="suggestion-card">
+                            <div class="suggestion-icon">�</div>
+                            <div class="suggestion-info">
+                                <h4>عايز الصورة تكون أوضح؟</h4>
+                                <p>جرب أداة تحسين الجودة للحصول على تفاصيل أدق.</p>
+                            </div>
+                            <button class="btn-suggestion" onclick="scrollToRestore()">تحسين الجودة</button>
                         </div>
                     </div>
 
@@ -214,52 +317,182 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="about-section" id="about">
-            <div class="glass-card about-card">
-                <div class="about-icon">👤</div>
-                <h2>من نحن</h2>
-                <div class="about-text">
-                    <p>أنا <strong>فادي وجيه</strong>، مصمم جرافيك قمت بتطوير <strong>PixelsLab</strong>؛ وهو موقع ويب
-                        عربي حديث يتيح إزالة خلفية الصور تلقائيًا باستخدام تقنيات الذكاء الاصطناعي مباشرة من المتصفح.
-                    </p>
-                    <p>تم تصميم الأداة خصيصًا للمصممين وصناع المحتوى لتوفير الوقت والحصول على نتائج احترافية بجودة عالية
-                        بدون الحاجة إلى برامج معقدة أو اشتراكات مدفوعة.</p>
-                    <ul class="about-features">
-                        <li>✔️ يدعم JPG / PNG / WEBP</li>
-                        <li>✔️ يعمل مباشرة من المتصفح</li>
-                        <li>✔️ واجهة عربية بسيطة</li>
-                        <li>✔️ مناسب للمصممين والمسوقين</li>
-                    </ul>
-                    <a href="https://www.behance.net/fady_wagih_pixels" target="_blank" class="behance-link">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M22 13h-4c0-.83.7-1.5 1.5-1.5s1.5.67 1.5 1.5m1 2.5c0-2.5-2.01-4.5-4.5-4.5s-4.5 2-4.5 4.5 2 4.5 4.5 4.5c1.47 0 2.76-.7 3.58-1.8l-1.3-.77c-.5.7-.78 1.07-1.28 1.07-1.1 0-1.5-.9-1.5-1.5h8.5v-.5M7 7.5h6c1.38 0 2.5 1.12 2.5 2.5 0 .8-.37 1.5-1 2 .63.5 1 1.2 1 2 0 1.38-1.12 2.5-2.5 2.5H7V7.5m5.5 3.5c0-.55-.45-1-1-1H9.5v2h2c.55 0 1-.45 1-1m0 3.5c0-.55-.45-1-1-1H9.5v2h2c.55 0 1-.45 1-1M18 9h4V8h-4v1z" />
-                        </svg>
-                        مشاهدة أعمالي على Behance
-                    </a>
+    <!-- Tool 2: Image Quality Enhancement -->
+    <section class="tool-container" id="quality-tool">
+        <div class="tool-header">
+            <div class="maintenance-badge">⚠️ هذه الأداة تحت التحسين والتطوير - لكنها تعمل</div>
+            <h2>زيادة جودة الصور</h2>
+            <p>حول صورك المشوشة إلى صور احترافية عالية الدقة باستخدام الذكاء الاصطناعي</p>
+        </div>
+        <div class="glass-card" id="quality-drop-zone">
+            <div class="upload-content" id="quality-upload-content">
+                <div class="icon-box">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                        <polyline points="17 8 12 3 7 8" />
+                        <line x1="12" y1="3" x2="12" y2="15" />
+                    </svg>
+                </div>
+                <h2>ارفع صورة لتحسين جودتها</h2>
+                <p>أفضل النتائج للوجوه والصور الفوتوغرافية</p>
+                <button class="btn-primary" onclick="document.getElementById('quality-file-input').click()">تحسين
+                    الجودة</button>
+                <input type="file" id="quality-file-input" hidden accept="image/*">
+            </div>
+
+            <div class="processing-content hidden" id="quality-processing-content">
+                <div class="loader"></div>
+                <div class="progress-container">
+                    <div class="progress-bar" id="quality-progress-bar"></div>
+                </div>
+                <span class="progress-percentage" id="quality-progress-percentage">0%</span>
+                <h2>جاري تحسين الجودة...</h2>
+                <p>نقوم الآن بمعالجة تفاصيل الصورة وتوضيحها...</p>
+            </div>
+
+            <div class="result-content hidden" id="quality-result-content">
+                <div class="comparison-container preview-comparison">
+                    <div class="comparison-slider">
+                        <div class="image-before">
+                            <img id="quality-original-img" src="" alt="Original">
+                            <div class="label-badge label-before">قبل</div>
+                        </div>
+                        <div class="image-after">
+                            <img id="quality-result-img" src="" alt="Result">
+                            <div class="label-badge label-after">بعد</div>
+                        </div>
+                        <div class="slider-handle">
+                            <div class="handle-line"></div>
+                            <div class="handle-circle">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="15 18 9 12 15 6" />
+                                </svg>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="9 18 15 12 9 6" />
+                                </svg>
+                            </div>
+                            <div class="handle-line"></div>
+                        </div>
+                        <input type="range" min="0" max="100" value="50" class="slider-input">
+                    </div>
+                </div>
+                <div class="actions">
+                    <button class="btn-secondary" onclick="resetQualityTool()">صورة جديدة</button>
+                    <a id="quality-download-btn" class="btn-primary download-link"
+                        download="pixellab-enhanced.png">تحميل النتيجة</a>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="features">
-            <div class="feature-card">
-                <div class="f-icon">✨</div>
-                <h3>جودة مذهلة</h3>
-                <p>دقة عالية في قص الحواف حتى مع التفاصيل الدقيقة مثل الشعر.</p>
+    <!-- Tool 3: Image Colorization -->
+    <section class="tool-container" id="colorize-tool">
+        <div class="tool-header">
+            <div class="maintenance-badge">⚠️ هذه الأداة تحت التحسين والتطوير - لكنها تعمل</div>
+            <h2>تلوين الصور القديمة</h2>
+            <p>أعد الحياة لذكرياتك القديمة وأضف ألواناً واقعية للصور الأبيض والأسود</p>
+        </div>
+        <div class="glass-card" id="colorize-drop-zone">
+            <div class="upload-content" id="colorize-upload-content">
+                <div class="icon-box">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                        <polyline points="17 8 12 3 7 8" />
+                        <line x1="12" y1="3" x2="12" y2="15" />
+                    </svg>
+                </div>
+                <h2>ارفع صورة لتلوينها</h2>
+                <p>يدعم الصور الأبيض والأسود أو الباهتة</p>
+                <button class="btn-primary" onclick="document.getElementById('colorize-file-input').click()">تلوين
+                    الصورة</button>
+                <input type="file" id="colorize-file-input" hidden accept="image/*">
             </div>
-            <div class="feature-card">
-                <div class="f-icon">🔒</div>
-                <h3>خصوصية تامة</h3>
-                <p>تتم المعالجة داخل متصفحك مباشرة، صورك لا ترفع لأي خادم.</p>
+
+            <div class="processing-content hidden" id="colorize-processing-content">
+                <div class="loader"></div>
+                <div class="progress-container">
+                    <div class="progress-bar" id="colorize-progress-bar"></div>
+                </div>
+                <span class="progress-percentage" id="colorize-progress-percentage">0%</span>
+                <h2>جاري تلوين الصورة...</h2>
+                <p>الذكاء الاصطناعي يقوم الآن باختيار الألوان المناسبة لكل جزء...</p>
             </div>
-            <div class="feature-card">
-                <div class="f-icon">💰</div>
-                <h3>مجاني تماماً</h3>
-                <p>لا حاجة لاشتراكات أو دفع مبالغ لإزالة الخلفية بجودة عالية.</p>
+
+            <div class="result-content hidden" id="colorize-result-content">
+                <div class="comparison-container preview-comparison">
+                    <div class="comparison-slider">
+                        <div class="image-before">
+                            <img id="colorize-original-img" src="" alt="Original">
+                            <div class="label-badge label-before">قبل</div>
+                        </div>
+                        <div class="image-after">
+                            <img id="colorize-result-img" src="" alt="Result">
+                            <div class="label-badge label-after">بعد</div>
+                        </div>
+                        <div class="slider-handle">
+                            <div class="handle-line"></div>
+                            <div class="handle-circle">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="15 18 9 12 15 6" />
+                                </svg>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="9 18 15 12 9 6" />
+                                </svg>
+                            </div>
+                            <div class="handle-line"></div>
+                        </div>
+                        <input type="range" min="0" max="100" value="50" class="slider-input">
+                    </div>
+                </div>
+                <div class="actions">
+                    <button class="btn-secondary" onclick="resetColorizeTool()">صورة جديدة</button>
+                    <a id="colorize-download-btn" class="btn-primary download-link"
+                        download="pixellab-colorized.png">تحميل النتيجة</a>
+                </div>
             </div>
-        </section>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="glass-card about-card">
+            <div class="about-icon">👤</div>
+            <h2>من نحن</h2>
+            <div class="about-text">
+                <p>أنا <strong>فادي وجيه</strong>، مصمم جرافيك قمت بتطوير <strong>PixelsLab</strong>؛ وهو موقع ويب
+                    عربي حديث يتيح إزالة خلفية الصور تلقائيًا وتحسين جودتها باستخدام تقنيات الذكاء الاصطناعي.</p>
+                <p>تم تصميم الأداة للمصممين وصناع المحتوى لتوفير الوقت والحصول على نتائج احترافية بجودة عالية.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+        <div class="feature-card">
+            <div class="f-icon">✨</div>
+            <h3>جودة مذهلة</h3>
+            <p>دقة عالية في قص الحواف حتى مع التفاصيل الدقيقة مثل الشعر.</p>
+        </div>
+        <div class="feature-card">
+            <div class="f-icon">🔒</div>
+            <h3>خصوصية تامة</h3>
+            <p>تتم المعالجة داخل متصفحك مباشرة بشكل آمن جداً.</p>
+        </div>
+        <div class="feature-card">
+            <div class="f-icon">💰</div>
+            <h3>مجاني تماماً</h3>
+            <p>لا حاجة لاشتراكات أو دفع مبالغ لإزالة الخلفية أو تحسين الجودة.</p>
+        </div>
+    </section>
     </main>
 
     <footer>
